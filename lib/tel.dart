@@ -16,74 +16,85 @@ class _TelState extends State<Tel> {
               return <Widget>[buildSliverAppBar()];
             },
             body: Container(
-              padding: EdgeInsets.only(left: 10, top: 20),
               color: Colors.white,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "Info",
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Here will be our info",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Bio",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "@akash_6898",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "username",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Divider(
-                      thickness: 1,
+                    padding: EdgeInsets.only(left: 10, top: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Info",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "Here will be our info",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Bio",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "@akash_6898",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "username",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Divider(
+                            thickness: 1,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Notifiaction"),
+                            Switch(
+                              onChanged: (value) {
+                                setState(() {
+                                  isSwitched = value;
+                                });
+                              },
+                              value: isSwitched,
+                              activeColor: Colors.white,
+                              activeTrackColor: Colors.blue,
+                              inactiveTrackColor: Colors.grey,
+                              inactiveThumbColor: Colors.white,
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
+                  Container(
+                    height: 20,
+                    width: double.infinity,
+                    color: Colors.grey.shade300,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Notifiaction"),
-                      Switch(
-                        onChanged: (value) {
-                          setState(() {
-                            isSwitched = value;
-                          });
-                        },
-                        value: isSwitched,
-                        activeColor: Colors.white,
-                        activeTrackColor: Colors.blue,
-                        inactiveTrackColor: Colors.grey,
-                        inactiveThumbColor: Colors.white,
-                      ),
-                    ],
-                  )
                 ],
               ),
             )),
@@ -157,7 +168,7 @@ class _TelState extends State<Tel> {
 
   Positioned buildPositioned() {
     return Positioned(
-      bottom: -25,
+      bottom: -20,
       right: 20,
       child: Container(
         width: 40,
